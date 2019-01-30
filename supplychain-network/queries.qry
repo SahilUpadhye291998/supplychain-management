@@ -1,0 +1,38 @@
+query getSpecificGrowerContact {
+  description: "This query will get us specific information pertaining to Grower"
+  statement: 
+    SELECT org.example.mynetwork.Contract
+      WHERE (grower == _$grower)
+}
+
+query getAllGrowerContact {
+  description: "This query will get us all the information pertaining to Grower"
+  statement: 
+    SELECT org.example.mynetwork.Grower
+}
+
+query getSpecificImporterContact {
+  description: "This query will get us specific information pertaining to Importer"
+  statement: 
+    SELECT org.example.mynetwork.Contract
+      WHERE (importer == _$importer)
+}
+
+query getAllImporterContact {
+  description: "This query will get us all the information pertaining to Grower"
+  statement: 
+    SELECT org.example.mynetwork.Importer
+}
+
+query getSpecificShipperContact {
+  description: "This query will get us specific information pertaining to Grower"
+  statement: 
+    SELECT org.example.mynetwork.Contract
+      WHERE (shipper == _$shipper)
+}
+
+query getAllShipperContact {
+  description: "This query will get us all the information pertaining to Grower"
+  statement: 
+    SELECT org.example.mynetwork.Shipper
+}

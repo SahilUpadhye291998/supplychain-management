@@ -1,0 +1,15 @@
+Permission access control in the Hyperledger
+    1 Business network access
+    2 netwok Administrative access
+
+Important namespace:
+    Organisation namespace
+        org.example.mynetwork
+
+    System namespace
+        org.hyperledger.composer.system
+
+Identities:
+    participant NetworkAdmin indentified by participantID{
+        o String participantID
+    }

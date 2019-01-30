@@ -1,0 +1,231 @@
+================================================================================
+==== Node Report ===============================================================
+
+Event: exception, location: "OnUncaughtException"
+Filename: node-report.20190127.200114.17183.001.txt
+Dump event time:  2019/01/27 20:01:14
+Module load time: 2019/01/27 17:20:48
+Process ID: 17183
+Command line: node /home/xgod666/.nvm/versions/node/v8.12.0/bin/composer network install --card PeerAdmin@hlfv1 --archiveFile supplychain-network@0.0.2.bna 
+
+Node.js version: v8.12.0
+(http_parser: 2.8.0, v8: 6.2.414.66, uv: 1.19.2, zlib: 1.2.11, ares: 1.10.1-DEV,
+ modules: 57, nghttp2: 1.32.0, napi: 3, openssl: 1.0.2p, icu: 60.1, unicode: 10.0,
+ cldr: 32.0, tz: 2017c)
+
+node-report version: 2.2.1 (built against Node.js v8.12.0, glibc 2.27, 64 bit)
+
+OS version: Linux 4.15.0-43-generic #46-Ubuntu SMP Thu Dec 6 14:45:28 UTC 2018
+(glibc: 2.27)
+
+Machine: neko x86_64
+
+================================================================================
+==== JavaScript Stack Trace ====================================================
+
+WriteStream.emit (events.js:1:1)
+onwriteError (_stream_writable.js:1:1)
+onwrite (_stream_writable.js:1:1)
+_destroy (internal/streams/destroy.js:1:1)
+WriteStream.stderr._destroy (internal/process/stdio.js:1:1)
+WriteStream.destroy (internal/streams/destroy.js:1:1)
+WriteWrap.afterWrite [as oncomplete] (net.js:1:1)
+
+================================================================================
+==== Native Stack Trace ========================================================
+
+ 0: [pc=0x7f9557a5609b] nodereport::OnUncaughtException(v8::Isolate*) [/home/xgod666/.nvm/versions/node/v8.12.0/lib/node_modules/composer-cli/node_modules/node-report/api.node]
+ 1: [pc=0xead6e2] v8::internal::Isolate::Throw(v8::internal::Object*, v8::internal::MessageLocation*) [node]
+ 2: [pc=0x10262ad] v8::internal::Runtime_Throw(int, v8::internal::Object**, v8::internal::Isolate*) [node]
+ 3: [pc=0x2041dad042fd] 
+
+================================================================================
+==== JavaScript Heap and Garbage Collector =====================================
+
+Heap space name: new_space
+    Memory size: 33,554,432 bytes, committed memory: 31,990,640 bytes
+    Capacity: 16,498,688 bytes, used: 10,803,840 bytes, available: 5,694,848 bytes
+Heap space name: old_space
+    Memory size: 42,790,912 bytes, committed memory: 42,625,816 bytes
+    Capacity: 32,720,576 bytes, used: 30,570,840 bytes, available: 2,149,736 bytes
+Heap space name: code_space
+    Memory size: 2,097,152 bytes, committed memory: 1,648,352 bytes
+    Capacity: 1,745,760 bytes, used: 1,536,640 bytes, available: 209,120 bytes
+Heap space name: map_space
+    Memory size: 4,739,072 bytes, committed memory: 4,718,128 bytes
+    Capacity: 4,650,360 bytes, used: 1,697,080 bytes, available: 2,953,280 bytes
+Heap space name: large_object_space
+    Memory size: 2,822,144 bytes, committed memory: 2,822,144 bytes
+    Capacity: 1,416,229,896 bytes, used: 2,778,632 bytes, available: 1,413,451,264 bytes
+
+Total heap memory size: 86,003,712 bytes
+Total heap committed memory: 83,805,080 bytes
+Total used heap memory: 47,387,032 bytes
+Total available heap memory: 1,424,458,248 bytes
+
+Heap memory limit: 1,501,560,832
+
+================================================================================
+==== Resource Usage ============================================================
+
+Process total resource usage:
+  User mode CPU: 2.290561 secs
+  Kernel mode CPU: 0.150267 secs
+  Average CPU Consumption : 0.0253566%
+  Maximum resident set size: 122,568,704 bytes
+  Page faults: 6 (I/O required) 42661 (no I/O required)
+  Filesystem activity: 1008 reads 16 writes
+
+Event loop thread resource usage:
+  User mode CPU: 1.968533 secs
+  Kernel mode CPU: 0.136036 secs
+  Average CPU Consumption : 0.0218634%
+  Filesystem activity: 1008 reads 16 writes
+
+================================================================================
+==== Node.js libuv Handle Summary ==============================================
+
+(Flags: R=Ref, A=Active)
+Flags  Type      Address             Details
+[-A]   async     0x0000000003bbd110  
+[--]   check     0x00007ffed39b51e0  
+[R-]   idle      0x00007ffed39b5258  
+[--]   prepare   0x00007ffed39b52d0  
+[--]   check     0x00007ffed39b5348  
+[-A]   async     0x000000000217bb40  
+[R-]   timer     0x0000000003bd49a0  repeat: 0, timeout expired: 11205473 ms ago
+[R-]   tty       0x0000000003bc58a8  , file descriptor: 9, write queue size: 0, writable
+[-A]   signal    0x0000000003bee9c0  signum: 28 (SIGWINCH)
+[R-]   tty       0x0000000003be36d8  , file descriptor: 11, write queue size: 0, writable
+[-A]   async     0x00007f9557c5ece0  
+[-A]   signal    0x0000000003c53000  signum: 6 (SIGABRT)
+[-A]   signal    0x0000000003c68890  signum: 14 (SIGALRM)
+[-A]   signal    0x0000000003c7e970  signum: 1 (SIGHUP)
+[-A]   signal    0x0000000003c67660  signum: 2 (SIGINT)
+[-A]   signal    0x0000000003c67750  signum: 15 (SIGTERM)
+[-A]   signal    0x0000000003c50400  signum: 26 (SIGVTALRM)
+[-A]   signal    0x0000000003c504f0  signum: 24 (SIGXCPU)
+[-A]   signal    0x0000000003c505e0  signum: 25 (SIGXFSZ)
+[-A]   signal    0x0000000003bd40a0  signum: 12 (SIGUSR2)
+[-A]   signal    0x0000000003bd4190  signum: 5 (SIGTRAP)
+[-A]   signal    0x0000000003bd4280  signum: 31 (SIGSYS)
+[-A]   signal    0x0000000003c729c0  signum: 3 (SIGQUIT)
+[-A]   signal    0x0000000003c72ab0  signum: 6 (SIGABRT)
+[-A]   signal    0x0000000003c72ba0  signum: 29 (SIGIO)
+[-A]   signal    0x0000000003c5d620  signum: 29 (SIGIO)
+[-A]   signal    0x0000000003c5d710  signum: 30 (SIGPWR)
+[-A]   signal    0x0000000003c5d800  signum: 16 (SIGSTKFLT)
+[-A]   signal    0x0000000003c5c5d0  signum: 31 (SIGSYS)
+[RA]   timer     0x0000000003c5c6c0  repeat: 0, timeout in: 80 ms
+[--]   timer     0x0000000003c54b18  repeat: 0, timeout expired: 6819883 ms ago
+[-A]   async     0x00007f9540008c00  
+[R-]   timer     0x0000000003c53a10  repeat: 0, timeout in: 27866215964148996 ms
+[-A]   async     0x00007f9555a44a58  
+[R-]   timer     0x00007f9550002310  repeat: 0, timeout in: 27866215964148996 ms
+[R-]   prepare   0x00007f9555a44980  
+[-A]   async     0x00007f95500041a0  
+[-A]   async     0x00007f954c004910  
+[-A]   async     0x00007f954000c490  
+[-A]   async     0x00007f954000c9a0  
+[-A]   async     0x00007f954000c7f0  
+[-A]   async     0x0000000003cfceb0  
+[R-]   timer     0x0000000003cf2fb0  repeat: 0, timeout in: 27866215964148996 ms
+[--]   timer     0x00007f9550002780  repeat: 0, timeout expired: 6822855 ms ago
+[-A]   timer     0x00007f954c012930  repeat: 0, timeout in: 5000 ms
+
+================================================================================
+==== System Information ========================================================
+
+Environment variables
+  CLUTTER_IM_MODULE=xim
+  NVM_DIR=/home/xgod666/.nvm
+  LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+  LESSCLOSE=/usr/bin/lesspipe %s %s
+  TERMINATOR_UUID=urn:uuid:2bcd5ad6-8a18-4d56-8821-26636bab5bdb
+  XDG_MENU_PREFIX=gnome-
+  _=/home/xgod666/.nvm/versions/node/v8.12.0/bin/composer
+  LANG=en_IN
+  DISPLAY=:0
+  OLDPWD=/home/xgod666/Documents/Hyperledger/Practise/baseProject/testProject/supplychain
+  GNOME_SHELL_SESSION_MODE=ubuntu
+  HLF_INSTALL_PATH=/home/xgod666/fabric-tools
+  COLORTERM=truecolor
+  NVM_CD_FLAGS=
+  DESKTOP_AUTOSTART_ID=1012f3f93e8a349ed154857375643913400000024650007
+  USERNAME=xgod666
+  XDG_VTNR=2
+  GIO_LAUNCHED_DESKTOP_FILE_PID=2818
+  SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+  MANDATORY_PATH=/usr/share/gconf/ubuntu.mandatory.path
+  XDG_SESSION_ID=2
+  USER=xgod666
+  DESKTOP_SESSION=ubuntu
+  QT4_IM_MODULE=xim
+  TEXTDOMAINDIR=/usr/share/locale/
+  DEFAULTS_PATH=/usr/share/gconf/ubuntu.default.path
+  PWD=/home/xgod666/Documents/Hyperledger/Practise/baseProject/testProject/supplychain/supplychain-network
+  HOME=/home/xgod666
+  TEXTDOMAIN=im-config
+  SSH_AGENT_PID=2561
+  QT_ACCESSIBILITY=1
+  XDG_SESSION_TYPE=x11
+  XDG_DATA_DIRS=/usr/share/ubuntu:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+  TERMINATOR_DBUS_NAME=net.tenshu.Terminator20x1a6021154d881c
+  XDG_SESSION_DESKTOP=ubuntu
+  GTK_MODULES=gail:atk-bridge
+  TERMINATOR_DBUS_PATH=/net/tenshu/Terminator2
+  FABRIC_VERSION=hlfv1
+  WINDOWPATH=2
+  SHELL=/bin/bash
+  TERM=xterm-256color
+  VTE_VERSION=5202
+  QT_IM_MODULE=xim
+  XMODIFIERS=@im=ibus
+  IM_CONFIG_PHASE=2
+  NVM_BIN=/home/xgod666/.nvm/versions/node/v8.12.0/bin
+  XDG_CURRENT_DESKTOP=ubuntu:GNOME
+  GPG_AGENT_INFO=/run/user/1000/gnupg/S.gpg-agent:0:1
+  GIO_LAUNCHED_DESKTOP_FILE=/etc/xdg/autostart/org.gnome.SettingsDaemon.MediaKeys.desktop
+  SHLVL=2
+  XDG_SEAT=seat0
+  LANGUAGE=en_IN:en
+  GDMSESSION=ubuntu
+  GNOME_DESKTOP_SESSION_ID=this-is-deprecated
+  LOGNAME=xgod666
+  DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+  XDG_RUNTIME_DIR=/run/user/1000
+  XAUTHORITY=/run/user/1000/gdm/Xauthority
+  XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/etc/xdg
+  PATH=/home/xgod666/.nvm/versions/node/v8.12.0/bin:/home/xgod666/fabric-tools/bin:/home/xgod666/fabric-tools/bin:/home/xgod666/fabric-tools/bin:/home/xgod666/fabric-tools/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+  SESSION_MANAGER=local/neko:@/tmp/.ICE-unix/2465,unix/neko:/tmp/.ICE-unix/2465
+  LESSOPEN=| /usr/bin/lesspipe %s
+  GTK_IM_MODULE=ibus
+  SUPPRESS_NO_CONFIG_WARNING=y
+  GRPC_SSL_CIPHER_SUITES=ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384
+
+Resource limits                        soft limit      hard limit
+  core file size (blocks)                       0       unlimited
+  data seg size (kbytes)                unlimited       unlimited
+  file size (blocks)                    unlimited       unlimited
+  max locked memory (bytes)              16777216        16777216
+  max memory size (kbytes)              unlimited       unlimited
+  open files                              1048576         1048576
+  stack size (bytes)                      8388608       unlimited
+  cpu time (seconds)                    unlimited       unlimited
+  max user processes                        32171           32171
+  virtual memory (kbytes)               unlimited       unlimited
+
+Loaded libraries
+  linux-vdso.so.1
+  /lib/x86_64-linux-gnu/libdl.so.2
+  /lib/x86_64-linux-gnu/librt.so.1
+  /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+  /lib/x86_64-linux-gnu/libm.so.6
+  /lib/x86_64-linux-gnu/libgcc_s.so.1
+  /lib/x86_64-linux-gnu/libpthread.so.0
+  /lib/x86_64-linux-gnu/libc.so.6
+  /lib64/ld-linux-x86-64.so.2
+  /home/xgod666/.nvm/versions/node/v8.12.0/lib/node_modules/composer-cli/node_modules/node-report/api.node
+  /home/xgod666/.nvm/versions/node/v8.12.0/lib/node_modules/composer-cli/node_modules/grpc/src/node/extension_binary/node-v57-linux-x64-glibc/grpc_node.node
+
+================================================================================

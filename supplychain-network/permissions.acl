@@ -1,0 +1,111 @@
+/**
+ * Access control rules for tutorial-network
+ */
+
+rule GrowerCantAlterTempratureReading {
+  description: "Grower will not be able to alter temprature reading of the transaction"
+  participant: "org.example.mynetwork.Grower"
+  operation: ALL
+  resource: "org.example.mynetwork.TempratureReading"
+  action: DENY
+}
+
+
+
+
+
+
+
+
+/** 
+  * rule that user can delete his transaction
+  * these rules are still in the basic form and may not work
+  */
+
+
+// rule GrowerCanDelete{
+//   description: "Grower cant delete Asset"
+//     participant(m): "org.example.mynetwork.Grower"
+//     operation: DELETE
+//     resource(v): "org.example.mynetwork.Contract"
+//     condition: (v.grower.getIdentifier() === m.grower.getIdentifier())
+//     // condition : (m === v)
+//     action: ALLOW
+// }
+
+// rule ShipperCanDelete{
+//   description: "Shipper can delete Asset"
+//     participant(m): "org.example.mynetwork.Shipper"
+//     operation: DELETE
+//     resource(v): "org.example.mynetwork.Contract"
+//     condition: (v.shipper.getIdentifier() === m.shipper.getIdentifier())
+//     // condition : (m === v)
+//     action: ALLOW
+// }
+
+
+
+
+
+/**
+ * rules that cant delete
+ */
+rule GrowerCantDelete{
+    description: "Grower cant delete Asset"
+    participant: "org.example.mynetwork.Grower"
+    operation: DELETE
+    resource: "org.hyperledger.composer.system.Asset"
+    action: DENY
+}
+
+rule ImporterCantDelete{
+    description: "Importer cant delete Asset"
+    participant: "org.example.mynetwork.Importer"
+    operation: DELETE
+    resource: "org.hyperledger.composer.system.Asset"
+    action: DENY
+}
+
+rule ShipperCantDelete{
+    description: "Shipper cant delete Asset"
+    participant: "org.example.mynetwork.Shipper"
+    operation: DELETE
+    resource: "org.hyperledger.composer.system.Asset"
+    action: DENY
+}
+
+
+rule Default {
+    description: "Allow all participants access to all resources"
+    participant: "ANY"
+    operation: ALL
+    resource: "org.example.mynetwork.*"
+    action: ALLOW
+}
+
+rule SystemACL {
+  description:  "System ACL to permit all access"
+  participant: "ANY"
+  operation: ALL
+  resource: "org.hyperledger.composer.system.**"
+  action: ALLOW
+}
+
+/*These are special cases*/
+
+rule NetworkAdminUser{
+  description: "Grants network administator all the things that are related to USER resource"
+  participant: "org.hyperledger.composer.system.NetworkAdmin"
+  operation: ALL
+  resource: "**"
+  action: ALLOW
+}
+
+
+rule NetworkAdminSystem{
+  description: "Grants network administator all the things that are related to SYSTEM resource"
+  participant: "org.hyperledger.composer.system.NetworkAdmin"
+  operation: ALL
+  resource: "org.hyperledger.composer.system.**"
+  action: ALLOW
+}
